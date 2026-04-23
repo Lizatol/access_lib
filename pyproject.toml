@@ -1,0 +1,68 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "access-lib"
+version = "0.1.0"
+description = "Multimodal E2SFCA healthcare accessibility analysis with specialisation decomposition"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Elizaveta Tolmacheva", email = "elizatolmacheva01@yandex.ru"},
+]
+keywords = [
+    "accessibility", "healthcare", "E2SFCA", "spatial-analysis",
+    "geopandas", "multimodal-transport", "gini", "lorenz",
+    "scenario-analysis", "urban-planning",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: GIS",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+
+dependencies = [
+    "geopandas>=0.14",
+    "shapely>=2.0",
+    "networkx>=3.0",
+    "scipy>=1.10",
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "matplotlib>=3.7",
+    "contextily>=1.4",
+    "mapclassify>=2.6",
+]
+
+[project.optional-dependencies]
+spatial = ["libpysal>=4.8", "esda>=2.5"]
+interactive = ["folium>=0.15"]
+full = [
+    "libpysal>=4.8", "esda>=2.5", "folium>=0.15",
+    "seaborn>=0.13", "scikit-learn>=1.3",
+    "duckdb>=0.9", "pyarrow>=14",
+]
+dev = ["pytest>=8.0", "pytest-cov>=5.0"]
+
+[project.urls]
+Homepage = "https://github.com/Lizatol/access_lib"
+Documentation = "https://github.com/Lizatol/access_lib#readme"
+Repository = "https://github.com/Lizatol/access_lib"
+Issues = "https://github.com/Lizatol/access_lib/issues"
+
+[tool.setuptools.packages.find]
+include = ["access_lib*"]
+
+[tool.setuptools.package-data]
+access_lib = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
