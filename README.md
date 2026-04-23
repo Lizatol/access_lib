@@ -207,5 +207,3 @@ If you use this library in your research, please cite:
 **Elizaveta Tolmacheva**
 ITMO University, Institute of Design and Urban Studies
 Saint Petersburg, Russia
-
-Supervisor: Natalia Chichkova
